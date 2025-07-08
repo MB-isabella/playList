@@ -13,7 +13,7 @@
         // Para cada música na playlist, cria um item de lista (li)
         playlist.forEach((musica, index) => {
           const item = document.createElement('li');
-          item.textContent = `${musica.nome} - ${musica.artista}`;
+          item.textContent = `${musica.nome} - ${musica.artista} - ${musica.album}`;
   
           // Cria um botão para remover a música
           const botaoRemover = document.createElement('button');
@@ -33,15 +33,16 @@
         // Recupera os valores digitados nos campos de input
         const nome = document.getElementById('nomeMusica').value.trim();
         const artista = document.getElementById('artistaMusica').value.trim();
+        const album = document.getElementById('albumMusica').value.trim();
   
         // Validação: não permite campos vazios
         if (!nome || !artista) {
-          alert('Por favor, preencha o nome da música e do artista.');
+          alert('Por favor, preencha o nome da música, do artista e do álbum.');
           return;
         }
   
         // Cria um objeto representando a música
-        const novaMusica = { nome: nome, artista: artista };
+        const novaMusica = { nome: nome, artista: artista, album: album};
   
         // Recupera a playlist atual do localStorage
         const dadosAtuais = localStorage.getItem('playlist');
@@ -56,6 +57,7 @@
         // Limpa os campos de input
         document.getElementById('nomeMusica').value = '';
         document.getElementById('artistaMusica').value = '';
+        document.getElementById('albumMusica').value = '';
   
         // Atualiza a exibição da lista
         carregarPlaylist();
@@ -83,3 +85,28 @@
       // Inicializa a playlist quando a página for carregada
       // ================================
       window.onload = carregarPlaylist;
+    
+      // ================================
+      // Alternância de tema claro/escuro
+      // ================================
+      document.getElementById('alternarTema').addEventListener('click', function () {
+      document.body.classList.toggle('tema-escuro');
+    
+        // Salvar o estado no localStorage
+        const modoClaroAtivo = document.body.classList.contains('tema-escuro');
+        localStorage.setItem('modoEscuro', modoEscuroAtivo);
+      });
+
+      // ================================
+      // Aplicar tema salvo ao carregar a página
+      // ================================
+      window.onload = function () {
+      // Carrega tema
+      const modoEscuroSalvo = localStorage.getItem('modoEscuro') === 'true';
+      if (modoClaroSalvo) {
+        document.body.classList.add('tema-escuro');
+      }
+
+      // Carrega playlist
+      carregarPlaylist();
+};

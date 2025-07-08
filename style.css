@@ -1,138 +1,198 @@
 /* Reset e base */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    background-color: #1c1c1c;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #f0f0f0;
-    padding: 40px 20px;
-  }
-  
-  .container {
-    max-width: 700px;
-    margin: 0 auto;
-    background-color: #2b2b2b;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
-  }
-  
-  /* Título com ícone */
-  h1 {
-    font-size: 2.5rem;
-    text-align: center;
-    color: #770707;
-    margin-bottom: 50px;
-  }
-  
-  h2 {
-    font-size: 1.8rem;
-    margin-top: 30px;
-    color: #f0f0f0;
-    border-bottom: 2px solid #770707;
-    padding-bottom: 10px;
-    margin-bottom: 40px;
-  }
-  
-  /* Formulário */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1c1c1c;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f0f0f0;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #2b2b2b;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+}
+
+/* Título com ícone */
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #770707;
+  margin-bottom: 50px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-top: 30px;
+  color: #f0f0f0;
+  border-bottom: 2px solid #770707;
+  padding-bottom: 10px;
+  margin-bottom: 40px;
+}
+
+/* Formulário */
+.formulario {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex: 1 1 40%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #888;
+  background-color: #e3e3e3;
+  color: #111;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border: 1px solid #770707;
+}
+
+/* Botão de adicionar */
+button {
+  padding: 12px 20px;
+  background-color: #770707;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #770b0b;
+}
+
+/* Lista de músicas */
+ul#listaMusicas {
+  list-style: none;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.musica-item {
+  background-color: #3a3a3a;
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.musica-item:hover {
+  transform: translateX(5px);
+}
+
+/* Botão de remover */
+.remover-btn {
+  background-color: #770707;
+  border: none;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.remover-btn:hover {
+  background-color: #770707;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
   .formulario {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    margin-bottom: 20px;
+    flex-direction: column;
+    align-items: stretch;
   }
-  
-  input[type="text"] {
-    flex: 1 1 40%;
-    padding: 12px 14px;
-    border-radius: 8px;
-    border: 1px solid #888;
-    background-color: #e3e3e3;
-    color: #111;
-    font-size: 1rem;
-    transition: border 0.3s ease;
-  }
-  
-  input[type="text"]:focus {
-    outline: none;
-    border: 1px solid #770707;
-  }
-  
-  /* Botão de adicionar */
+
+  input[type="text"],
   button {
-    padding: 12px 20px;
-    background-color: #770707;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease;
+    width: 100%;
   }
-  
-  button:hover {
-    background-color: #770b0b;
-  }
-  
-  /* Lista de músicas */
-  ul#listaMusicas {
-    list-style: none;
-    margin-top: 20px;
-    padding: 0;
-  }
-  
+
   .musica-item {
-    background-color: #3a3a3a;
-    color: #fff;
-    padding: 14px 20px;
-    border-radius: 8px;
-    margin-bottom: 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: transform 0.2s ease;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
-  
-  .musica-item:hover {
-    transform: translateX(5px);
-  }
-  
-  /* Botão de remover */
-  .remover-btn {
-    background-color: #770707;
-    border: none;
-    color: #fff;
-    padding: 6px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background 0.3s ease;
-  }
-  
-  .remover-btn:hover {
-    background-color: #770707;
-  }
-  
-  /* Responsivo */
-  @media (max-width: 600px) {
-    .formulario {
-      flex-direction: column;
-      align-items: stretch;
-    }
-  
-    input[type="text"],
-    button {
-      width: 100%;
-    }
-  
-    .musica-item {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-    }
-  }
+}
+
+/* Botão de alternância de tema */
+.btn-tema {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+  z-index: 1000;
+}
+
+.btn-tema:hover {
+  background-color: #666;
+}
+
+/* Tema claro */
+.tema-escuro {
+  background-color: #333333 !important;
+  color: #1c1c1c !important;
+}
+
+.tema-escuro h1 {
+  color: #e7e7e7;
+}
+
+.tema-escuro h2 {
+  color:#e7e7e7
+}
+
+.tema-escuro h4{
+  color:#e7e7e7
+}
+
+.tema-escuro input[type="text"] {
+  background-color: #2e2e2e;
+  color: #e7e7e7;
+}
+
+.tema-escuro .container,
+.tema-escuro .musica-item {
+  background-color: #1c1c1c;
+  color: #e7e7e7;
+}
+
+.tema-escuro .remover-btn {
+  background-color: #d33232;
+}
+
+.tema-escuro .remover-btn:hover {
+  background-color: #a52727;
+}
+.tema-escuro #listaMusicas li{
+  color: #e7e7e7;
+}
