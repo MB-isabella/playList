@@ -103,7 +103,7 @@
       window.onload = function () {
       // Carrega tema
       const modoEscuroSalvo = localStorage.getItem('modoEscuro') === 'true';
-      if (modoClaroSalvo) {
+      if (modoEscuroSalvo) {
         document.body.classList.add('tema-escuro');
       }
 
