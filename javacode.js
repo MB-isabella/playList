@@ -107,6 +107,10 @@
         document.body.classList.add('tema-escuro');
       }
 
+      document.getElementById('cliques').addEventListener('click', function () {
+        
+      }
+
       // Carrega playlist
       carregarPlaylist();
-};
+}

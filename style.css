@@ -12,6 +12,20 @@ body {
   padding: 40px 20px;
 }
 
+input,
+button {
+  margin: 5px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 5px 0;
+}
+
 .container {
   max-width: 700px;
   margin: 0 auto;
@@ -168,11 +182,11 @@ ul#listaMusicas {
 }
 
 .tema-escuro h2 {
-  color:#e7e7e7
+  color: #e7e7e7
 }
 
-.tema-escuro h4{
-  color:#e7e7e7
+.tema-escuro h4 {
+  color: #e7e7e7
 }
 
 .tema-escuro input[type="text"] {
@@ -193,6 +207,7 @@ ul#listaMusicas {
 .tema-escuro .remover-btn:hover {
   background-color: #a52727;
 }
-.tema-escuro #listaMusicas li{
+
+.tema-escuro #listaMusicas li {
   color: #e7e7e7;
 }
